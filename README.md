@@ -45,7 +45,7 @@ Quando um novo veículo chegar ao estacionamento, um erro de vagas indisponívei
   - Singleton: usado para criar APENAS UM OBJETO ESTACIONAMENTO;
   - Factory (abstract ou não): usado para criar os diversos carros que ocuparão as vagas.
   
-→ Testes
+# Testes
 - Realizar os testes necessários para verificar o funcionamento do código
 - Casos de teste:
   - Verificar se o Objeto Vaga é preenchido por um Objeto Carro);
