@@ -23,26 +23,34 @@ Quando um novo veículo chegar ao estacionamento, um erro de vagas indisponívei
 # FUNÇÕES
 → Criação do Código: Criar os arquivos referentes às classes e definir os atributos necessários
 - Objetos
-  - Estacionamento
-    - Atributos: Matriz  4x4 (A~D e 1~4) do tipo Vaga; Boolean cheio
-    - Métodos: void esvaziar();
+  - Estacionamento (Contém vagas)
+    - Atributos: 
+      - Matriz 4x4 (A-D e 1-4) ou ArrayList do tipo Vaga;
+      - Boolean cheio.
   - Vaga
-    - Atributos: Carro carro; Boolean ocupada; tipo Normal, Idoso ou Deficiente
+    - Atributos: Carro carro; Boolean ocupada; tipo Normal, Idoso ou Deficiente;
+    - Métodos:
+      - void esvaziar() - Alertar a aplicação da nova vaga;
+      - void lotar() - Alertar a aplicação da redução das vagas.
   - Carro
-    - Atributos: String modeloCarro; Vaga [] []; Boolean estacionado; tipo Normal, Idoso ou Deficiente
-    - Métodos: void estacionar(short firstIdx, short secIdx); void sair(); setVaga(Vaga vaga);
+    - Atributos: String modeloCarro; Vaga [] []; Boolean estacionado; tipo (Normal, Idoso ou Deficiente);
+    - Métodos: void estacionar(short firstIdx, short secIdx); void sair(); setVaga(Vaga vaga).
 
-→ Aplicação dos Padrões (Mínimo: 2 Padrões)
+→ Aplicação dos Padrões (Mínimo: 3 Padrões)
 - Visualizar e enxergar como e onde aplicar os padrões propostos
 - Sugestão: 
-  - Observer: usado para alertar ao sistema sempre que uma vaga for ocupada. Cada vaga (objeto) terá um Observer.
-  - Strategy: usado para diferenciar os tipos de vaga, como Normal, Idoso, Deficiente
-  - State: usado para verificar os estados da vaga, caso um veículo tente estacionar numa vaga ocupada ou especial
-  - Singleton: usado para criar APENAS UM OBJETO ESTACIONAMENTO
+  - Observer: usado para alertar o sistema sempre que uma vaga for ocupada. Cada vaga (objeto) terá um Observer;
+  - Strategy: usado para diferenciar os tipos de vaga, como Normal, Idoso, Deficiente;
+  - State: usado para verificar os estados da vaga, caso um veículo tente estacionar numa vaga ocupada ou diferente do seu tipo de vaga;
+  - Singleton: usado para criar APENAS UM OBJETO ESTACIONAMENTO.
   
 → Testes
 - Realizar os testes necessários para verificar o funcionamento do código
-- Áreas de testes:
-  - Testar o relacionamento do Objeto Carro com o Objeto Vaga (verificar se o Objeto Vaga é preenchido por um Objeto Carro)
-  - Verificar se o Objeto Vaga muda seu estado para Ocupado
-  - Verificar se um Objeto Carro Normal consegue ocupar uma Vaga Especial
+- Casos de teste:
+  - Verificar se o Objeto Vaga é preenchido por um Objeto Carro);
+  - Verificar se o Objeto Vaga muda seu estado para Ocupado;
+  - Verificar se um Objeto Carro Normal consegue ocupar uma Vaga Especial;
+  - Verificar se um Objeto Carro recebe um alerta quando uma nova vaga surgir.
+- CI:
+  - Configurar integração contínua onde cada a cada pull request todos os testes automatizados sejam executados e retornem resultados;
+  - Caso não seja possivel configurar uma CI no GitHub, mudar urgentemente para GitLab.
