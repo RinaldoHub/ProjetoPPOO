@@ -42,7 +42,8 @@ Quando um novo veículo chegar ao estacionamento, um erro de vagas indisponívei
   - Observer: usado para alertar o sistema sempre que uma vaga for ocupada. Cada vaga (objeto) terá um Observer;
   - Strategy: usado para diferenciar os tipos de vaga, como Normal, Idoso, Deficiente;
   - State: usado para verificar os estados da vaga, caso um veículo tente estacionar numa vaga ocupada ou diferente do seu tipo de vaga;
-  - Singleton: usado para criar APENAS UM OBJETO ESTACIONAMENTO.
+  - Singleton: usado para criar APENAS UM OBJETO ESTACIONAMENTO;
+  - Factory (abstract ou não): usado para criar os diversos carros que ocuparão as vagas.
   
 → Testes
 - Realizar os testes necessários para verificar o funcionamento do código
