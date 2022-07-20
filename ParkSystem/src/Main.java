@@ -1,7 +1,7 @@
 public class Main
 {
     public static void main(String[] args) {
-        System.out.println("PARK-SYSTEM v0.1\n");
+        System.out.println("PARK-SYSTEM v0.2\n");
 
         /* TESTE DE CRIAÇÃO DE OBJETOS */
         //Aqui é a parte para testar a criação de objetos
