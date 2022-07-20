@@ -1,12 +1,13 @@
 public class VagaNormal extends Vaga {
-    boolean ocupada;
-    CarroNormal carro;
-
+    boolean especial = false; //atributo de vaga especial
+    
     public VagaNormal(String id) {
         super(id);
     }
-    
-    void setCarro(CarroNormal carro){
+
+    //linka o carro à vaga e vice-versa
+    public void setCarro(Carro carro){
         this.carro = carro;
+        this.ocupada = true;
     }
 }

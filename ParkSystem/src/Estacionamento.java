@@ -5,7 +5,17 @@ import java.util.List;
 public class Estacionamento {
     boolean cheio;
     List<Vaga> vagas = new ArrayList();
-    int i, j;
+    private static Estacionamento uniqueInstance;
+    
+    private Estacionamento(){
+        
+    }
+    
+    public synchronized static Estacionamento getEstacionamento(){
+        if (uniqueInstance == null)
+            uniqueInstance = new Estacionamento();
+        return uniqueInstance;
+    }
     
     public void setVagas(Vaga vaga){
         vagas.add(vaga);
@@ -17,9 +27,4 @@ public class Estacionamento {
             vagas[2][j].especial = true;
         }
     }*/
-    
-    
-    public void criarEstacionamento(List list){
-        list.add();
-    }
 }
