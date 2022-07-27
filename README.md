@@ -18,7 +18,7 @@
 - Caso de veículo normal com vagas
 Um veículo chega no estacionamento, e a tela mostra quais vagas estão disponiveis. Quando ele tentar ocupar uma vaga ocupada ou especial, um erro será apresentado. Ao tentar ocupar uma vaga livre não especial, o Observer notificará ao sistema para atualizar a lista de vagas disponíveis.
 - Caso sem vagas
-Quando um novo veículo chegar ao estacionamento, um erro de vagas indisponíveis será apresentado
+Quando um novo veículo chegar ao estacionamento, um erro de vagas indisponíveis será apresentado.
 
 # FUNÇÕES
 → Criação do Código: Criar os arquivos referentes às classes e definir os atributos necessários
