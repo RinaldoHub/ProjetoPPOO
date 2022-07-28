@@ -54,4 +54,4 @@ Quando um novo veículo chegar ao estacionamento, um erro de vagas indisponívei
   - Verificar se um Objeto Carro recebe um alerta quando uma nova vaga surgir.
 - CI:
   - Configurar integração contínua onde cada a cada pull request todos os testes automatizados sejam executados e retornem resultados;
-  - Caso não seja possivel configurar uma CI no GitHub, mudar urgentemente para GitLab.
+  - Caso não seja possivel configurar uma CI no GitHub, mudar urgentemente para GitLab
