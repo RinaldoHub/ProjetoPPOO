@@ -4,24 +4,18 @@ package carros;
 import vagas.Vaga;
 
 public abstract class Carro {
-    String placaCarro; //identificador do carro
-    boolean estacionado = false; //atributo que determina se está estacionado
-    Vaga vaga; //vaga ocupada pelo carro
+    public String placaCarro; //identificador do carro
+    public boolean estacionado = false; //atributo que determina se está estacionado
+    public Vaga vaga; //vaga ocupada pelo carro
+    public boolean isIdoso;
+    public boolean isPCD;
     
     //construtor que atribui a string à vaga
     public Carro(String placa){
         this.placaCarro = placa;
     }
     
-    //ATRIBUIR A RESPONSABILIDADE DE ESTACIONAR PARA O ESTACIONAMENTO
-    //linka a vaga ao carro
-    public void estacionar(Vaga vaga){
-        System.out.println("O Carro de placa: |" + this.getPlaca() + 
-                "| ESTACIONOU na vaga: |" + vaga.id + "|" );
-        this.vaga = vaga;
-        this.estacionado = true;
-        this.vaga.setCarro(this);
-    }
+    //RESPONSABILIDADE DE ESTACIONAR MOVIDA PARA "ESTACIONAMENTO"
     
     //retorna a placa do carro
     public String getPlaca(){
@@ -31,14 +25,6 @@ public abstract class Carro {
     //retorna a vaga ocupada pelo carro
     public String getVaga(){
         return vaga.getId();
-    }
-    
-    public void sair(){
-        System.out.println("O Carro de placa: |" + this.getPlaca() + 
-                "| SAIU da vaga: |" + this.vaga.id + "|" );
-        vaga.liberarVaga();
-        this.vaga = null;
-        this.estacionado = false;
     }
     
 }

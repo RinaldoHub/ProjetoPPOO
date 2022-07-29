@@ -12,6 +12,5 @@ public class VagaNormal extends Vaga {
     //linka o carro à vaga e vice-versa
     public void setCarro(Carro carro){
         this.carro = carro;
-        this.ocupada = true;
     }
 }
