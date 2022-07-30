@@ -8,7 +8,7 @@
 
 → Como: O sistema vai mostrar na tela a quantidade de vagas total + as vagas disponíveis em cada área (A~D). Serão 4 vagas por área.
 
-→ Quais padrões podem ser aplicados
+→ Quais padrões podem ser aplicados:
 - Observer
 - Strategy
 - State
