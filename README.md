@@ -2,7 +2,7 @@
 
 # IDEIA
 
-→ O que é: Um sistema para gerenciar vagas de um estacionamento
+→ O que é: Um bagulho que faz um negócio lá. Morô?
 
 → Porquê: As pessoas tem problemas para localizar vagas em locais públicos grandes, como shoppings
 
