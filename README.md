@@ -2,7 +2,7 @@
 
 # IDEIA
 
-→ O que é: Um sistema que tem o objetivo de gerenciar vagas de um renomado estacionamento
+→ O que é: Um sistema que tem o objetivo de gerenciar vagas de um estacionamento.
 
 → Porquê: As pessoas tem problemas para localizar vagas em locais públicos grandes, como shoppings
 
