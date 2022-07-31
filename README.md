@@ -55,3 +55,5 @@ Quando um novo veículo chegar ao estacionamento, um erro de vagas indisponívei
 - CI:
   - Configurar integração contínua onde cada a cada pull request todos os testes automatizados sejam executados e retornem resultados;
   - Caso não seja possivel configurar uma CI no GitHub, mudar urgentemente para GitLab.
+
+Teste de atualização usando o VSCodium
