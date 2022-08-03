@@ -10,14 +10,14 @@ public class Estacionamento {
     List<Vaga> vagas = new ArrayList();
     private static Estacionamento uniqueInstance;
     
-    private Estacionamento(){
-        
+    private Estacionamento(String Filial){
+        this.criaVagas(Filial);
     }
     
     //Implementação do SINGLETON
-    public synchronized static Estacionamento getEstacionamento(){
+    public synchronized static Estacionamento getEstacionamento(String Filial){
         if (uniqueInstance == null)
-            uniqueInstance = new Estacionamento();
+            uniqueInstance = new Estacionamento(Filial);
         return uniqueInstance;
     }
     
@@ -44,7 +44,7 @@ public class Estacionamento {
     }
     
     //Esse método
-    public void criaVagas(){
+    public void criaVagas(String Filial){
         for (int i = 97; i <= 100; i++){
             for (int j = 1; j <=4; j++){
                 StringBuilder nomeVaga = new StringBuilder();
@@ -55,6 +55,8 @@ public class Estacionamento {
                 System.out.println(nomeVaga);
             }
         }
+        
+        
     }
     
     public void setVagas(Vaga vaga){
