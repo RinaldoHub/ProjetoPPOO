@@ -39,11 +39,11 @@ Quando um novo veículo chegar ao estacionamento, um erro de vagas indisponívei
 → Aplicação dos Padrões (Mínimo: 3 Padrões)
 - Visualizar e enxergar como e onde aplicar os padrões propostos
 - Sugestão: 
-  - Observer: usado para alertar o sistema sempre que uma vaga for ocupada. Cada vaga (objeto) terá um Observer;
+  - Observer: usado para alertar o sistema sempre que uma vaga for ocupada ou liberada. Cada vaga (objeto) terá um Observer;
   - Strategy: usado para diferenciar os tipos de vaga, como Normal, Idoso, Deficiente;
   - State: usado para verificar os estados da vaga, caso um veículo tente estacionar numa vaga ocupada ou diferente do seu tipo de vaga;
   - Singleton: usado para criar APENAS UM OBJETO ESTACIONAMENTO;
-  - Factory (abstract ou não): usado para criar os diversos carros que ocuparão as vagas.
+  - Factory (abstract ou não): usado para criar os diversos carros que ocuparão as vagas e criar todos os objetos vagas.
   
 # Testes
 - Realizar os testes necessários para verificar o funcionamento do código
@@ -55,5 +55,3 @@ Quando um novo veículo chegar ao estacionamento, um erro de vagas indisponívei
 - CI:
   - Configurar integração contínua onde cada a cada pull request todos os testes automatizados sejam executados e retornem resultados;
   - Caso não seja possivel configurar uma CI no GitHub, mudar urgentemente para GitLab.
-
-Teste de atualização usando o VSCodium
