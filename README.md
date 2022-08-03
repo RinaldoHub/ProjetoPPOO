@@ -43,7 +43,7 @@ Quando um novo veículo chegar ao estacionamento, um erro de vagas indisponívei
   - Strategy: usado para diferenciar os tipos de vaga, como Normal, Idoso, Deficiente;
   - State: usado para verificar os estados da vaga, caso um veículo tente estacionar numa vaga ocupada ou diferente do seu tipo de vaga;
   - Singleton: usado para criar APENAS UM OBJETO ESTACIONAMENTO;
-  - Factory (abstract ou não): usado para criar os diversos carros que ocuparão as vagas e criar todos os objetos vagas.
+  - Factory (abstract ou não): usado para criar os diversos carros que ocuparão as vagas e criar todos os objetos vagas. Ex: Filial de Recife tem V vagas, sendo X para idosos, Y para PCD e Z comuns.
   
 # Testes
 - Realizar os testes necessários para verificar o funcionamento do código
