@@ -13,24 +13,24 @@ public class Main
         //IMPLEMENTAR A CRIAÇÃO COM FLYWEIGHT
         //Aqui é a parte para testar a criação de objetos
         Carro carro1 = new CarroNormal("AND1337");
-        Carro carro2 = new CarroIdoso("RFB2303");
-        Carro carro3 = new CarroPCD("LUC1234");
+        //Carro carro2 = new CarroIdoso("RFB2303");
+        //Carro carro3 = new CarroPCD("LUC1234");
 
         /* SINGLETON */
         //Implementação do SINGLETON, criando apenas UM objeto do seu tipo
         Estacionamento park = Estacionamento.getEstacionamento("Recife");
                 
-        System.out.println(carro3.isIdoso + " " + carro3.isPCD);
+        System.out.println(carro1.isIdoso + " " + carro1.isPCD);
         
         /* TESTE DE LINKAGEM ENTRE OBJETOS CARRO-VAGA */
         //setando os carros às vagas
-        park.estacionar(carro3, a2); //o estacionamento que DEVE OBSERVAR SE UM CARRO FOI
+        //park.estacionar(carro3, a1); //o estacionamento que DEVE OBSERVAR SE UM CARRO FOI
         //park.estacionar(carro2, a1); //ESTACIONADO
         //park.estacionar(carro3, c4);
         
         //deslinkando os carros às vagas
-        park.sair(a1);
-        park.sair(a2);
-        park.sair(a3);
+        //park.sair(a1);
+        //park.sair(a2);
+        //park.sair(a3);
     }
 }
