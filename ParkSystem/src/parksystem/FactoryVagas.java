@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import vagas.Vaga;
 
-public abstract class FactoryVagas {
+public interface FactoryVagas {
     
-    protected void FactoryVagas(){
-        System.out.println("AAABBB");
-    }
-
+    public List<Vaga> construirVagas();
+    
 }

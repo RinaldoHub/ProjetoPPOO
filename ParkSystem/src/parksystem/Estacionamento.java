@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Estacionamento {    
-    public List<Vaga> vagas = new ArrayList();
+    public List<Vaga> vagas;
     private static Estacionamento uniqueInstance;
     
     private Estacionamento(String filial){
@@ -15,6 +15,7 @@ public class Estacionamento {
         
         if (filial.equals("Recife")){
             fabrica = new FactoryVagasRecife();
+            vagas = fabrica.construirVagas();
         }
         else if (filial.equals("São Lourenço")){
             
@@ -62,12 +63,4 @@ public class Estacionamento {
         vaga.isParked = false;
     }
     
-    //implementar a QUANTIDADE LIMITE DO ESTACIONAMENTO
-    
-    /*
-    public void setVagas(){
-        for(int j = 0; j <= this.vagas[0].length; j++){
-            vagas[2][j].especial = true;
-        }
-    }*/
 }
