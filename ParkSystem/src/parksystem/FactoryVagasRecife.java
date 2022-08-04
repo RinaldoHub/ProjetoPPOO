@@ -4,10 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import vagas.*;
 
-public class FactoryVagasRecife implements FactoryVagas{
-
-    @Override
-    public List<Vaga> construirVagas() {
+public class FactoryVagasRecife extends FactoryVagas{
+    
+    public void FactoryVagasRecife() {
         List<Vaga> vagas = new ArrayList<Vaga>();
         
         String id;
@@ -23,7 +22,6 @@ public class FactoryVagasRecife implements FactoryVagas{
             }
         }
         
-        return vagas;
     }
     
 }

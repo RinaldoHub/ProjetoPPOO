@@ -7,17 +7,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Estacionamento {    
-    List<Vaga> vagas = new ArrayList();
+    public List<Vaga> vagas = new ArrayList();
     private static Estacionamento uniqueInstance;
     
-    private Estacionamento(String Filial){
-        this.criaVagas(Filial);
+    private Estacionamento(String filial){
+        FactoryVagas fabrica;
+        
+        if (filial.equals("Recife")){
+            fabrica = new FactoryVagasRecife();
+        }
+        else if (filial.equals("São Lourenço")){
+            
+        }
     }
     
     //Implementação do SINGLETON
-    public synchronized static Estacionamento getEstacionamento(String Filial){
+    public synchronized static Estacionamento getEstacionamento(String filial){
         if (uniqueInstance == null)
-            uniqueInstance = new Estacionamento(Filial);
+            uniqueInstance = new Estacionamento(filial);
         return uniqueInstance;
     }
     
@@ -42,31 +49,7 @@ public class Estacionamento {
         carro.estacionado = true;
         carro.vaga.setCarro(carro);
     }
-    
-    //Esse método
-    public void criaVagas(String Filial){
-        for (int i = 97; i <= 100; i++){
-            for (int j = 1; j <=4; j++){
-                StringBuilder nomeVaga = new StringBuilder();
-                nomeVaga.append((char) i);
-                nomeVaga.append(j);
-                Vaga tmp = new VagaNormal((nomeVaga).toString());
-                setVagas(tmp);
-                System.out.println(nomeVaga);
-            }
-        }
-        
-        
-    }
-    
-    public void setVagas(Vaga vaga){
-        if (vagas.size() == 16){
-            System.out.println("Estacionamento CHEIO!");
-            return;
-        }
-        vagas.add(vaga);
-    }
-    
+
     public void sair(Vaga vaga){
         if (vaga.carro == null){
             System.out.println("NÃO HÁ CARRO NA VAGA");
