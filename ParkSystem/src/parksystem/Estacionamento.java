@@ -7,22 +7,31 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Estacionamento {    
-    List<Vaga> vagas = new ArrayList();
+    public List<Vaga> vagas;
     private static Estacionamento uniqueInstance;
     
-    private Estacionamento(){
+    private Estacionamento(String filial){
+        FactoryVagas fabrica;
         
+        if (filial.equals("Recife")){
+            fabrica = new FactoryVagasRecife();
+            vagas = fabrica.construirVagas();
+        }
+        else if (filial.equals("São Lourenço")){
+            
+        }
     }
     
     //Implementação do SINGLETON
-    public synchronized static Estacionamento getEstacionamento(){
+    public synchronized static Estacionamento getEstacionamento(String filial){
         if (uniqueInstance == null)
-            uniqueInstance = new Estacionamento();
+            uniqueInstance = new Estacionamento(filial);
         return uniqueInstance;
     }
     
     //linka a vaga ao carro
-    public void estacionar(Carro carro, Vaga vaga){
+    public void estacionar(Carro carro, String vaga){
+        /*
         if (!carro.isIdoso & !carro.isPCD && vaga.isIdoso | vaga.isPCD){
             System.out.println("O Carro de placa: |" + carro.getPlaca() + 
                 "| NÃO TEM PERMISSÃO PARA ESTACIONAR na vaga: |" + vaga.id + "|" );
@@ -36,35 +45,23 @@ public class Estacionamento {
                 "| NÃO TEM PERMISSÃO PARA ESTACIONAR na vaga: |" + vaga.id + "|" );
             return;
         }
+        
         System.out.println("O Carro de placa: |" + carro.getPlaca() + 
                 "| ESTACIONOU na vaga: |" + vaga.id + "|" );
-        carro.vaga = vaga;
-        carro.estacionado = true;
-        carro.vaga.setCarro(carro);
-    }
-    
-    //Esse método
-    public void criaVagas(){
-        for (int i = 97; i <= 100; i++){
-            for (int j = 1; j <=4; j++){
-                StringBuilder nomeVaga = new StringBuilder();
-                nomeVaga.append((char) i);
-                nomeVaga.append(j);
-                Vaga tmp = new VagaNormal((nomeVaga).toString());
-                setVagas(tmp);
-                System.out.println(nomeVaga);
-            }
+        */
+        
+        for (int i = 0; i < vagas.size(); i++) {
+            String tmp = vagas.get(i).id;
+            if (tmp.equals(vaga)) {
+                carro.vaga = vagas.get(i);
+                carro.estacionado = true;
+                carro.vaga.setCarro(carro);
+            }    
+            
         }
+                
     }
-    
-    public void setVagas(Vaga vaga){
-        if (vagas.size() == 16){
-            System.out.println("Estacionamento CHEIO!");
-            return;
-        }
-        vagas.add(vaga);
-    }
-    
+
     public void sair(Vaga vaga){
         if (vaga.carro == null){
             System.out.println("NÃO HÁ CARRO NA VAGA");
@@ -77,12 +74,4 @@ public class Estacionamento {
         vaga.isParked = false;
     }
     
-    //implementar a QUANTIDADE LIMITE DO ESTACIONAMENTO
-    
-    /*
-    public void setVagas(){
-        for(int j = 0; j <= this.vagas[0].length; j++){
-            vagas[2][j].especial = true;
-        }
-    }*/
 }

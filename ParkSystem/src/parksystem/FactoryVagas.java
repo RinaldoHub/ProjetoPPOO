@@ -1,6 +1,11 @@
 package parksystem;
 
-public class FactoryVagas {
+import java.util.ArrayList;
+import java.util.List;
+import vagas.Vaga;
+
+public interface FactoryVagas {
     
-    //public Vaga getVaga()
+    public List<Vaga> construirVagas();
+    
 }
