@@ -30,7 +30,8 @@ public class Estacionamento {
     }
     
     //linka a vaga ao carro
-    public void estacionar(Carro carro, Vaga vaga){
+    public void estacionar(Carro carro, String vaga){
+        /*
         if (!carro.isIdoso & !carro.isPCD && vaga.isIdoso | vaga.isPCD){
             System.out.println("O Carro de placa: |" + carro.getPlaca() + 
                 "| NÃO TEM PERMISSÃO PARA ESTACIONAR na vaga: |" + vaga.id + "|" );
@@ -44,11 +45,21 @@ public class Estacionamento {
                 "| NÃO TEM PERMISSÃO PARA ESTACIONAR na vaga: |" + vaga.id + "|" );
             return;
         }
+        
         System.out.println("O Carro de placa: |" + carro.getPlaca() + 
                 "| ESTACIONOU na vaga: |" + vaga.id + "|" );
-        carro.vaga = vaga;
-        carro.estacionado = true;
-        carro.vaga.setCarro(carro);
+        */
+        
+        for (int i = 0; i < vagas.size(); i++) {
+            String tmp = vagas.get(i).id;
+            if (tmp.equals(vaga)) {
+                carro.vaga = vagas.get(i);
+                carro.estacionado = true;
+                carro.vaga.setCarro(carro);
+            }    
+            
+        }
+                
     }
 
     public void sair(Vaga vaga){

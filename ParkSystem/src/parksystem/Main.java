@@ -20,13 +20,18 @@ public class Main
         //Implementação do SINGLETON, criando apenas UM objeto do seu tipo
         Estacionamento park = Estacionamento.getEstacionamento("Recife");
                 
-        System.out.println("O carro é de idoso? " + carro1.isIdoso + ". E de PCD? " + carro1.isPCD);
-        
         /* TESTE DE LINKAGEM ENTRE OBJETOS CARRO-VAGA */
         //setando os carros às vagas
-        //park.estacionar(carro3, a1); //o estacionamento que DEVE OBSERVAR SE UM CARRO FOI
+        park.estacionar(carro1, "a1"); //o estacionamento que DEVE OBSERVAR SE UM CARRO FOI
         //park.estacionar(carro2, a1); //ESTACIONADO
         //park.estacionar(carro3, c4);
+        
+        System.out.println("///// Dados do carro /////");
+        System.out.println("Placa: " + carro1.getPlaca());
+        System.out.println("Estacionado? " + carro1.estacionado);
+        System.out.println("Vaga: " + carro1.getVaga());
+        System.out.println("Idoso? " + carro1.isIdoso);
+        System.out.println("PCD? " + carro1.isPCD);
         
         //deslinkando os carros às vagas
         //park.sair(a1);
