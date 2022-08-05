@@ -11,15 +11,11 @@ public class Estacionamento {
     private static Estacionamento uniqueInstance;
     
     private Estacionamento(String filial){
-        FactoryVagas fabrica;
+        Filial fabrica;
         
-        if (filial.equals("Recife")){
-            fabrica = new FactoryVagasRecife();
-            vagas = fabrica.construirVagas();
-        }
-        else if (filial.equals("São Lourenço")){
+        fabrica = new FilialFactory().construirFilal(filial);
+        vagas = fabrica.construirVagas();
             
-        }
     }
     
     //Implementação do SINGLETON
