@@ -46,16 +46,11 @@ public class Estacionamento {
                 "| ESTACIONOU na vaga: |" + vaga.id + "|" );
         */
         
-        for (int i = 0; i < vagas.size(); i++) {
-            String tmp = vagas.get(i).id;
-            if (tmp.equals(vaga)) {
-                carro.vaga = vagas.get(i);
-                carro.estacionado = true;
-                carro.vaga.setCarro(carro);
-            }    
-            
-        }
-                
+        int index = getIndexVaga(vaga);
+        carro.vaga = vagas.get(index);
+        carro.estacionado = true;
+        carro.vaga.setCarro(carro);
+                       
     }
 
     public void sair(Vaga vaga){
@@ -68,6 +63,19 @@ public class Estacionamento {
                 "| SAIU da vaga: |" + vaga.id + "|" );
         vaga.liberarVaga();
         vaga.isParked = false;
+    }
+    
+    public int getIndexVaga(String id) {
+        int index = 0;
+        for (int i = 0; i < vagas.size(); i++) {
+            String tmp = vagas.get(i).id;
+            if (tmp.equals(id)) {
+                index = i;
+            }    
+            
+        }
+        
+        return index;
     }
     
 }
