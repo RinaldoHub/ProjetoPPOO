@@ -12,6 +12,7 @@ public class Estacionamento {
     private Estacionamento(String filial){
         Filial fabrica;
         
+        // Implementação do SIMPLE FACTORY
         fabrica = new FilialFactory().construirFilal(filial);
         vagas = fabrica.construirVagas();
             
