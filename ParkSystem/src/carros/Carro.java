@@ -30,14 +30,27 @@ public abstract class Carro {
     public void sairVaga(){
         
         if(this.vaga == null){
-            System.out.println("O carro de placa: |" + vaga.carro.getPlaca() +
+            System.out.println("O carro de placa: |" + this.getPlaca() +
                     "| não está ocupando nenhuma vaga");
         }
         else {
-            System.out.println("O carro de placa: |" + vaga.carro.getPlaca() +
-                    "| saiu da vaga");
+            System.out.println("O carro de placa: |" + this.getPlaca() +
+                    "| saiu da vaga: |" + this.getVaga() + "|");
             this.vaga.carro = null;
             this.vaga = null;
+        }
+
+    }
+    
+    public void getAtributos() {
+        System.out.println("\n///// Dados do carro /////");
+        System.out.println("Placa: " + this.getPlaca());
+        System.out.println("Idoso? " + this.isIdoso);
+        System.out.println("PCD? " + this.isPCD);
+        System.out.println("Estacionado? " + this.estacionado);
+        
+        if (this.estacionado) {
+            System.out.println("Vaga: " + this.getVaga());
         }
 
     }

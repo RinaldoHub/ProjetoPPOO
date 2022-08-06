@@ -26,30 +26,30 @@ public class Estacionamento {
     
     //linka a vaga ao carro
     public void estacionar(Carro carro, String vaga){
-        /*
-        if (!carro.isIdoso & !carro.isPCD && vaga.isIdoso | vaga.isPCD){
+        
+        int index = getIndexVaga(vaga);
+
+        if (!carro.isIdoso & !carro.isPCD && vagas.get(index).isIdoso | vagas.get(index).isPCD){
             System.out.println("O Carro de placa: |" + carro.getPlaca() + 
-                "| NÃO TEM PERMISSÃO PARA ESTACIONAR na vaga: |" + vaga.id + "|" );
+                "| NÃO TEM PERMISSÃO PARA ESTACIONAR na vaga: |" + vaga + "|" );
             return;
-        } else if (carro.isIdoso && !carro.isPCD && vaga.isPCD){
+        } else if (carro.isIdoso && !carro.isPCD && vagas.get(index).isPCD){
             System.out.println("O Carro de placa: |" + carro.getPlaca() + 
-                "| NÃO TEM PERMISSÃO PARA ESTACIONAR na vaga: |" + vaga.id + "|" );
+                "| NÃO TEM PERMISSÃO PARA ESTACIONAR na vaga: |" + vaga + "|" );
             return;
-        } else if (carro.isPCD && !carro.isIdoso && vaga.isIdoso) {
+        } else if (carro.isPCD && !carro.isIdoso && vagas.get(index).isIdoso) {
             System.out.println("O Carro de placa: |" + carro.getPlaca() + 
-                "| NÃO TEM PERMISSÃO PARA ESTACIONAR na vaga: |" + vaga.id + "|" );
+                "| NÃO TEM PERMISSÃO PARA ESTACIONAR na vaga: |" + vaga + "|" );
             return;
         }
         
         System.out.println("O Carro de placa: |" + carro.getPlaca() + 
-                "| ESTACIONOU na vaga: |" + vaga.id + "|" );
-        */
+                "| ESTACIONOU na vaga: |" + vaga + "|" );
         
-        int index = getIndexVaga(vaga);
         carro.vaga = vagas.get(index);
         carro.estacionado = true;
         carro.vaga.setCarro(carro);
-                       
+          
     }
 
     public void sair(Carro carro){
