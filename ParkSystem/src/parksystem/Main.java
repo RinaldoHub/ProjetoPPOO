@@ -1,8 +1,6 @@
 package parksystem;
 
-
 import carros.*;
-import vagas.*;
 
 public class Main
 {
@@ -34,7 +32,7 @@ public class Main
         System.out.println("PCD? " + carro1.isPCD);
         
         //deslinkando os carros às vagas
-        //park.sair(a1);
+        park.sair(carro1);
         //park.sair(a2);
         //park.sair(a3);
     }
