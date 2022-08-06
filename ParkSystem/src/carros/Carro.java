@@ -1,6 +1,5 @@
 package carros;
 
-
 import vagas.Vaga;
 
 public abstract class Carro {
@@ -25,6 +24,22 @@ public abstract class Carro {
     //retorna a vaga ocupada pelo carro
     public String getVaga(){
         return vaga.getId();
+    }
+    
+    //esvazia a vaga, atribuindo null para o carro da vaga e vice-versa
+    public void sairVaga(){
+        
+        if(this.vaga == null){
+            System.out.println("O carro de placa: |" + vaga.carro.getPlaca() +
+                    "| não está ocupando nenhuma vaga");
+        }
+        else {
+            System.out.println("O carro de placa: |" + vaga.carro.getPlaca() +
+                    "| saiu da vaga");
+            this.vaga.carro = null;
+            this.vaga = null;
+        }
+
     }
     
 }

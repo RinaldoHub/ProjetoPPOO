@@ -1,6 +1,5 @@
 package parksystem;
 
-
 import carros.*;
 import vagas.*;
 import java.util.ArrayList;
@@ -53,16 +52,9 @@ public class Estacionamento {
                        
     }
 
-    public void sair(Vaga vaga){
-        if (vaga.carro == null){
-            System.out.println("NÃO HÁ CARRO NA VAGA");
-            return;
-        }
-            
-        System.out.println("O Carro de placa: |" + vaga.carro.getPlaca() + 
-                "| SAIU da vaga: |" + vaga.id + "|" );
-        vaga.liberarVaga();
-        vaga.isParked = false;
+    public void sair(Carro carro){
+        carro.sairVaga();
+        
     }
     
     public int getIndexVaga(String id) {

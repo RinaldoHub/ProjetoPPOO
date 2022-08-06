@@ -18,12 +18,7 @@ public abstract class Vaga {
     public void setCarro(Carro carro){
         this.carro = carro;
     }
-    
-    //esvazia a vaga, atribuindo null para o carro da vaga e vice-versa
-    public void liberarVaga(){
-        this.carro = null;
-    }
-    
+
     //retorna a id da vaga
     public String getId(){
         return this.id;
