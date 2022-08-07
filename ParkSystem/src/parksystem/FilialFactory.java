@@ -8,7 +8,7 @@ public class FilialFactory {
         if (filial.equals("Recife")) {
             filialEspecificada = new FilialRecife();
         }
-        else if (filial.equals("Recife")) {
+        else if (filial.equals("Olinda")) {
             filialEspecificada = new FilialOlinda();
         }
         
