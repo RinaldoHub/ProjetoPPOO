@@ -3,7 +3,6 @@ package vagas;
 import carros.Carro;
 
 public class VagaNormal extends Vaga {
-    boolean especial = false; //atributo de vaga especial
     
     public VagaNormal(String id) {
         super(id);

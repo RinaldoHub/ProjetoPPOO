@@ -10,11 +10,11 @@ public class Estacionamento {
     private static Estacionamento uniqueInstance;
     
     private Estacionamento(String filial){
-        Filial fabrica;
+        Filial novaFilial;
         
         // Implementação do SIMPLE FACTORY
-        fabrica = new FilialFactory().construirFilal(filial);
-        vagas = fabrica.construirVagas();
+        novaFilial = new FilialFactory().construirFilal(filial);
+        vagas = novaFilial.construirVagas();
             
     }
     
